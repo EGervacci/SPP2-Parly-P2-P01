@@ -3,31 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package problema.pkg01.pp2;
+package spp2.parly.p2.p1;
+
 import java.util.Scanner;
-/**
- *
- * @author Benito Mv
+
+/** 
+ *Parly
+ *CECILIA GUTIÉRREZ DE LARA HERNÁNDEZ
+ *NORMA LEDEZMA MARTÍNEZ
+ *ERICK EDUARDO GERVACCI ROMERO
+ *DIEGO SANTANA LEIVA
+ *BENITO RAFAEL MORANTE VÁZQUEZ
  */
-public class Problema01PP2 {
+public class SPP2ParlyP2P1 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-// EQUIPO
-//CECILIA GUTIÉRREZ DE LARA HERNÁNDEZ
-//NORMA LEDEZMA MARTÍNEZ
-//ERICK EDUARDO GERVACCI ROMERO
-//DIEGO SANTANA LEIVA
-//BENITO RAFAEL MORANTE VÁZQUEZ
-
-
-
-//mostrar menu
+//Mostrar menu
  mostrarMenu();
     }
- public static void mostrarMenu(){
+    public static void mostrarMenu(){
      int opcion;
      System.out.println(" Bienvenido");
      System.out.println("Introducción la opción que desee");
@@ -49,7 +46,7 @@ public class Problema01PP2 {
         break;
      }
  }
-     public static void sumaMatrices(){
+    public static void sumaMatrices(){
      int Arreglo1[][]; 
      int Arreglo2[][];
      int numColumnas;
@@ -58,12 +55,8 @@ public class Problema01PP2 {
      int datoCasilla1;
      int datoCasilla2;
      
-         System.out.println(" Introduce número de filas:");
-         Scanner sc= new Scanner(System.in);
-         numColumnas= sc.nextInt();
-         System.out.println(" Introduce número de columas:");
-         Scanner kb = new Scanner(System.in);
-         numFilas= kb.nextInt();
+         numColumnas= pedirEntero("el número de columnas: ");
+         numFilas= pedirEntero("el número de filas");
      
      Arreglo1= new int [numFilas][numColumnas];
          for (int i=0; i<Arreglo1.length; i++){
@@ -93,7 +86,7 @@ public class Problema01PP2 {
          }
          }
      }
-     public static void restaMatrices(){
+    public static void restaMatrices(){
      int Arreglo1[][]; 
      int Arreglo2[][];
      int numColumnas;
@@ -137,7 +130,7 @@ public class Problema01PP2 {
      }    
      }
      }
-     public static void multiMatrices(){
+    public static void multiMatrices(){
      int Arreglo1[][]; 
      int Arreglo2[][];
      int numColumnas;
@@ -180,11 +173,25 @@ public class Problema01PP2 {
              
          }
          }
-     }   
      }
-     
+    public static int pedirEntero(String mensaje){
+        Scanner sc=new Scanner(System.in);
+        boolean flag;
+        int a=0;
+        do{
+            try{
+                System.out.println("Escriba "+ mensaje);
+                a=sc.nextInt();
+                flag=false;
+            }
+            catch(Exception e){
+                System.out.println("Error, ingrese entero");
+                sc.nextInt();
+                flag=true;
+            }
+        }
+        while (flag);
+        return a;
+    }
+    }
     
-    
-   
-
-
